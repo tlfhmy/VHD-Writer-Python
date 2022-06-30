@@ -139,7 +139,7 @@ class Ui_MainWindow(object):
         bin_bytes = self.getBinBytes(self.dataPathCombo.currentText())
 
         start_sector = self.LBABox.value()
-        self.statusBrowser.append("准备工作完成，开始写入数据......")
+        self.statusBrowser.append(f"准备工作完成，开始写入数据文件{self.dataPathCombo.currentText()}......")
 
         for i, j in enumerate(range(512*start_sector, 512*start_sector+len(bin_bytes))):
             vhd_bytes[j] = bin_bytes[i]
